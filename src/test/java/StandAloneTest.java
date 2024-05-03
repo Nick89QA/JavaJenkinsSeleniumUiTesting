@@ -17,7 +17,7 @@ public class StandAloneTest extends BaseTest {
         driver.findElement(By.id("login")).click();
 
         List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
-        products.stream().filter(products)
+        products.stream().filter(product -> product.findElement(By.cssSelector("b")).getText().equals("ZARA COAT 3"));
 
 
     }
