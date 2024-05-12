@@ -5,7 +5,8 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 
-public class StandAloneTest extends BaseTest {
+public class
+StandAloneTest extends BaseTest {
 
     @Test
     public void loginAndFindElementInList() {
@@ -20,7 +21,7 @@ public class StandAloneTest extends BaseTest {
 
         WebElement prod = (WebElement) products.stream().filter(product -> product.
                         findElement(By.cssSelector("b")).getText().equals("ZARA COAT 3")).findFirst().orElse(null);
-        prod.findElement(By.cssSelector(".card-body button:last-of-type")).click();
+        prod.findElement(By.cssSelector("//button[@class='btn w-10 rounded' and contains(text(), 'Add To Cart')]")).click();
     }
 
 }
