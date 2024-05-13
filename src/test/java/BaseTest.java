@@ -14,6 +14,6 @@ public class BaseTest  extends WebDriverInitializer {
 
     @AfterTest
     public void tearDown() {
-        quitDriver();
+        closeDriver();
     }
 }
