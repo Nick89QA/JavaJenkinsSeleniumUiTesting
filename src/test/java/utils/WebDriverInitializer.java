@@ -4,21 +4,23 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebDriverInitializer {
-    protected static WebDriver driver;
+    public class WebDriverInitializer {
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            WebDriverManager.chromedriver().clearCache();
-            driver = new ChromeDriver();
+        private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+        public static WebDriver getDriver() {
+            if (driver.get() == null) {
+                WebDriverManager.chromedriver().clearCache();
+                driver.set(new ChromeDriver());
+            }
+            return driver.get();
         }
-        return driver;
+
+        public static void closeDriver() {
+            if (driver.get() != null) {
+                driver.get().quit();
+                driver.set(null);
+            }
+        }
     }
 
-    public static void quitDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
-        }
-    }
-}
