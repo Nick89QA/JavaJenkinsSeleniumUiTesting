@@ -11,17 +11,17 @@ StandAloneTest extends BaseTest {
     @Test
     public void loginAndFindElementInList() {
 
-        driver.get("https://rahulshettyacademy.com/client");
-
-        driver.findElement(By.id("userEmail")).sendKeys("anshika@gmail.com");
-        driver.findElement(By.id("userPassword")).sendKeys("Iamking@000");
-        driver.findElement(By.id("login")).click();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.goToUrl();
+        loginPage.loginApplication("anshika@gmail.com", "Iamking@000");
 
         List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
 
         WebElement prod = (WebElement) products.stream().filter(product -> product.
                         findElement(By.cssSelector("b")).getText().equals("ZARA COAT 3")).findFirst().orElse(null);
         prod.findElement(By.cssSelector("//button[@class='btn w-10 rounded' and contains(text(), 'Add To Cart')]")).click();
+
     }
+
 
 }

@@ -19,10 +19,20 @@ public class LoginPage {
     WebElement userEmail;
 
     @FindBy(id="userPassword")
-    WebElement password;
+    WebElement passwordElem;
 
     @FindBy(id="login")
     WebElement submit;
 
+    public void loginApplication(String email, String password) {
+        userEmail.sendKeys(email);
+        passwordElem.sendKeys(password);
+        submit.click();
+    }
+
+    public void goToUrl() {
+        driver.get("https://rahulshettyacademy.com/client");
+
+    }
 
 }
