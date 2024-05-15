@@ -14,11 +14,12 @@ StandAloneTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.goToUrl();
         loginPage.loginApplication("anshika@gmail.com", "Iamking@000");
+        ProductCatalogue productCatalogue = new ProductCatalogue(driver);
+        List<WebElement> products = productCatalogue.getProductList();
 
-        List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
 
         WebElement prod = (WebElement) products.stream().filter(product -> product.
-                        findElement(By.cssSelector("b")).getText().equals("ZARA COAT 3")).findFirst().orElse(null);
+                findElement(By.cssSelector("b")).getText().equals("ZARA COAT 3")).findFirst().orElse(null);
         prod.findElement(By.cssSelector("//button[@class='btn w-10 rounded' and contains(text(), 'Add To Cart')]")).click();
 
     }
