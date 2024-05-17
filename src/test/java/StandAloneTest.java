@@ -1,24 +1,15 @@
-import org.openqa.selenium.By;
+
+
 import org.openqa.selenium.WebElement;
+
 import org.testng.annotations.Test;
 
 import java.util.List;
 
 
-public class
-StandAloneTest extends BaseTest {
+public class StandAloneTest {
 
-    String productName = "ZARA COAT 3";
 
-    @Test
-    public void loginAndFindElementInList() {
-
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.goToUrl();
-        loginPage.loginApplication("anshika@gmail.com", "Iamking@000");
-        ProductCatalogue productCatalogue = new ProductCatalogue(driver);
-        List<WebElement> products = productCatalogue.getProductList();
-         productCatalogue.addProductToCart(productName);
 
 
 //        WebElement prod = (WebElement) products.stream().filter(product -> product.
@@ -28,4 +19,4 @@ StandAloneTest extends BaseTest {
     }
 
 
-}
+//}
