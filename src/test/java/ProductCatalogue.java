@@ -9,9 +9,9 @@ import java.util.List;
 public class ProductCatalogue extends AbstractComponent {
 
 
+
     public ProductCatalogue(WebDriver driver) {
         super(driver);
-        AbstractComponent.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
