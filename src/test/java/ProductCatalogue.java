@@ -8,10 +8,11 @@ import java.util.List;
 
 public class ProductCatalogue extends AbstractComponent {
 
-
+ WebDriver driver;
 
     public ProductCatalogue(WebDriver driver) {
         super(driver);
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
