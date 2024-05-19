@@ -1,3 +1,4 @@
+import core.BaseSeleniumPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,12 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class ProductCatalogue extends AbstractComponent {
+public class ProductCatalogue extends BaseSeleniumPage {
 
- WebDriver driver;
+
 
     public ProductCatalogue(WebDriver driver) {
-        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -26,10 +26,10 @@ public class ProductCatalogue extends AbstractComponent {
     By addToCart = By.cssSelector(".card-body button:  last-of-type");
     By toastMessage = By.cssSelector(("#toast-container"));
 
-    public List<WebElement> getProductList() {
-        waitForElementToAppear(productsBy);
-        return products;
-    }
+//    public List<WebElement> getProductList() {
+//        waitForElementToAppear(productsBy);
+//        return products;
+//    }
 
     public WebElement getProductByName(String productName) {
         WebElement prod = products.stream().filter(product -> product.
@@ -40,8 +40,8 @@ public class ProductCatalogue extends AbstractComponent {
     public void addProductToCart(String productName) {
         WebElement prod = getProductByName(productName);
         prod.findElement(addToCart).click();
-        waitForElementToAppear(toastMessage);
-        waitForElementToDisappear(spinner);
+//        waitForElementToAppear(toastMessage);
+//        waitForElementToDisappear(spinner);
     }
 
 
