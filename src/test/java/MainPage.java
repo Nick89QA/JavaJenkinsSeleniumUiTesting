@@ -1,16 +1,17 @@
 
 import core.BaseSeleniumPage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+// Go to the main Page of BrowserStack and search word "Selenium" and get count of result
 
-public class LoginPage extends BaseSeleniumPage {
+
+public class MainPage extends BaseSeleniumPage {
 
 
-    public LoginPage() {
-        driver.get("https://rahulshettyacademy.com/client");
+    public MainPage() {
+        driver.get("https://www.browserstack.com/");
         PageFactory.initElements(driver, this);
 
     }
