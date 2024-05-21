@@ -3,9 +3,9 @@ package core;
 import org.openqa.selenium.WebDriver;
 
 abstract public class BaseSeleniumPage {
-    protected static WebDriver driver;
+    protected WebDriver driver;
 
-    public static void setDriver(WebDriver webDriver) {
-        driver = webDriver;
+    public BaseSeleniumPage(WebDriver driver) {
+        this.driver = driver;
     }
 }

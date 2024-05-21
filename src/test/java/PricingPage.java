@@ -9,24 +9,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-//Go to the pricing page and check prices on 5 products
+/**
+ * Go to the pricing page and check prices on 5 different products
+ */
+
 public class PricingPage extends BaseSeleniumPage {
 
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
     public PricingPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
 
     }
 
-    public void waitForElementToAppear(By findBy) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
-    }
-
-    public void waitForElementToDisappear(WebElement ele) {
-        wait.until(ExpectedConditions.visibilityOf(ele));
-
-    }
 }

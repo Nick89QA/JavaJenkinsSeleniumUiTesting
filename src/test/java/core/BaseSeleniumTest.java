@@ -15,8 +15,7 @@ public class BaseSeleniumTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        BaseSeleniumPage.setDriver(driver);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
 
