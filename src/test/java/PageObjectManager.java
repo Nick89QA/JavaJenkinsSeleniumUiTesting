@@ -15,7 +15,9 @@ public class PageObjectManager extends BaseSeleniumTest {
 
 
         MainPage mainPage = new MainPage(driver);
-        mainPage.goToUrl();
+        mainPage.goToMainPageUrl();
+        mainPage.clickAndSearchSeleniumInSearchField();
+
 
 
         //  List<WebElement> products = productCatalogue.getProductList();
