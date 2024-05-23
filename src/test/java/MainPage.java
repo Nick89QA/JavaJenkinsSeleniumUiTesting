@@ -1,5 +1,7 @@
 
 import core.BaseSeleniumPage;
+import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,10 +27,10 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     @FindBy(xpath = "//button[@aria-label='Search'][2]")
-    WebElement searchButton;
+    WebElement searchButtonElement;
 
     @FindBy(xpath = "//input[@type='search']")
-    WebElement searchField;
+    WebElement searchFieldElement;
 
 
     public void goToMainPageUrl() {
@@ -39,5 +41,8 @@ public class MainPage extends BaseSeleniumPage {
     public void clickAndSearchSeleniumInSearchField() {
         wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
         searchField.sendKeys("Selenium");
+        searchField.sendKeys(Keys.ENTER);
+        wait.until(ExpectedConditions.
+                urlToBe("https://www.browserstack.com/search?query=selenium&type=all"));// изменить на ожидание элемента
     }
 }
