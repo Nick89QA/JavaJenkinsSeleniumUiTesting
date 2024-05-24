@@ -39,9 +39,9 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     public void clickAndSearchSeleniumInSearchField() {
-        wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
-        searchField.sendKeys("Selenium");
-        searchField.sendKeys(Keys.ENTER);
+        wait.until(ExpectedConditions.elementToBeClickable(searchButtonElement)).click();
+        searchFieldElement.sendKeys("Selenium");
+        searchFieldElement.sendKeys(Keys.ENTER);
         wait.until(ExpectedConditions.
                 urlToBe("https://www.browserstack.com/search?query=selenium&type=all"));// изменить на ожидание элемента
     }
