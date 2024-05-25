@@ -20,7 +20,6 @@ public class PageObjectManager extends BaseSeleniumTest {
 
 
 
-        //  List<WebElement> products = productCatalogue.getProductList();
 
     }
 
