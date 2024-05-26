@@ -13,7 +13,6 @@ public class PageObjectManager extends BaseSeleniumTest {
     @Test
     public void Test() {
 
-
         MainPage mainPage = new MainPage(driver);
         mainPage.goToMainPageUrl();
         mainPage.clickAndSearchSeleniumInSearchField();
