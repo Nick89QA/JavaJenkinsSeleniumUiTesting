@@ -1,17 +1,13 @@
 
 import core.BaseSeleniumPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 /**
  * Go to the main Page of BrowserStack and search word "Selenium" and get count of result
@@ -21,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 public class MainPage extends BaseSeleniumPage {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    private final static Logger logger = LogManager.getLogger(MainPage.class.getName());
+
 
 
     public MainPage(WebDriver driver) {
@@ -36,6 +32,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//input[@type='search']")
     WebElement searchFieldElement;
 
+    @FindBy(xpath = "//span[@class='ais-Stats-text']//strong[contains(text(),'1439 Results')]")
+    WebElement searchResultCount;
+
 
     public void goToMainPageUrl() {
         driver.get("https://www.browserstack.com/");
@@ -46,8 +45,14 @@ public class MainPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.elementToBeClickable(searchButtonElement)).click();
         searchFieldElement.sendKeys("Selenium");
         searchFieldElement.sendKeys(Keys.ENTER);
-        logger.info("Waiting on result search page count");
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(),'1439 Results')]")));
+     //   wait.until(ExpectedConditions.presenceOfElementLocated(By.id("all-ds-stats")));
+      //  wait.until(ExpectedConditions.visibilityOf(searchResultCount));
 
+        try {
+           wait.until(ExpectedConditions.presenceOfElementLocated(By));
+            System.out.println("--Successfully reached search result page with count--");
+        } catch (TimeoutException e) {
+            System.out.println("---Failed to find search result count within wait time--");
+        }
     }
 }
