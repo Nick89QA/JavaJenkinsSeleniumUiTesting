@@ -17,7 +17,8 @@ import java.time.Duration;
 public class MainPage extends BaseSeleniumPage {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
+    private String expectedSearchResultPageUrl = "https://www.browserstack.com/search?query=selenium&type=all";
+    private String currentPageUrl = driver.getCurrentUrl();
 
 
     public MainPage(WebDriver driver) {
@@ -42,19 +43,27 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     public void clickAndSearchSeleniumInSearchField() {
-        wait.until(ExpectedConditions.elementToBeClickable(searchButtonElement)).click();
+        searchButtonElement.click();
+        //wait.until(ExpectedConditions.elementToBeClickable(searchButtonElement)).click();
         searchFieldElement.sendKeys("Selenium");
         searchFieldElement.sendKeys(Keys.ENTER);
-     //   wait.until(ExpectedConditions.presenceOfElementLocated(By.id("all-ds-stats")));
-      //  wait.until(ExpectedConditions.visibilityOf(searchResultCount));
-
-        try {
-           wait.until(ExpectedConditions.presenceOfElementLocated(By));
-
-
-            System.out.println("--Successfully reached search result page with count--");
-        } catch (TimeoutException e) {
-            System.out.println("---Failed to find search result count within wait time--");
+        if (expectedSearchResultPageUrl.equals(currentPageUrl)) {
+            System.out.println("You are on the target page");
+        } else {
+            System.out.println("You are not on the target page");
         }
+
+//     //   wait.until(ExpectedConditions.presenceOfElementLocated(By.id("all-ds-stats")));
+//      //  wait.until(ExpectedConditions.visibilityOf(searchResultCount));
+//
+//        try {
+//           wait.until(ExpectedConditions.presenceOfElementLocated(By));
+//
+//
+//            System.out.println("--Successfully reached search result page with count--");
+//        } catch (TimeoutException e) {
+//            System.out.println("---Failed to find search result count within wait time--");
+//        }
+//    }
     }
 }
