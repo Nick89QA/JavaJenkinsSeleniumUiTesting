@@ -50,6 +50,8 @@ public class MainPage extends BaseSeleniumPage {
 
         try {
            wait.until(ExpectedConditions.presenceOfElementLocated(By));
+
+
             System.out.println("--Successfully reached search result page with count--");
         } catch (TimeoutException e) {
             System.out.println("---Failed to find search result count within wait time--");
