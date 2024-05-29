@@ -1,5 +1,7 @@
 import core.BaseSeleniumPage;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,5 +22,11 @@ public class PricingPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
 
     }
+
+    private String currentPage = driver.getCurrentUrl();
+    private String expectedSearchResultPageUrl = "https://www.browserstack.com/pricing?cycle=annual";
+
+    @FindBy(xpath = "//button[@aria-label='Search'][2]")
+    WebElement searchButtonElement;
 
 }

@@ -11,7 +11,7 @@ import java.util.List;
 
 
 /**
- * Go to the main Page of BrowserStack and search word "Selenium" and get current count of result
+ * Go to the main Page of BrowserStack and search word "Selenium" and get current count of search result
  */
 
 
