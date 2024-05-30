@@ -26,7 +26,7 @@ public class PricingPage extends BaseSeleniumPage {
     private String currentPage = driver.getCurrentUrl();
     private String expectedSearchResultPageUrl = "https://www.browserstack.com/pricing?cycle=annual";
 
-    @FindBy(xpath = "//button[@aria-label='Search'][2]")
-    WebElement searchButtonElement;
+    @FindBy(xpath = "//*[@href='/pricing']")
+    WebElement pricingButton;
 
 }
