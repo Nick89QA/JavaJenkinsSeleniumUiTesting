@@ -29,4 +29,21 @@ public class PricingPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@href='/pricing']")
     WebElement pricingButton;
 
+    @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='Live ']")
+    WebElement menuButtonLive;
+
+    @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='App Live ']")
+    WebElement menuButtonAppLive;
+
+    @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='Automate ']")
+    WebElement menuButtonAutomate;
+
+    @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='App Automate ']")
+    WebElement menuButtonAppAutomate;
+
+
+
+
+
+
 }
