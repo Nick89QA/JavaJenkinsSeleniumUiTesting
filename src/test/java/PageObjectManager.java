@@ -11,17 +11,22 @@ public class PageObjectManager extends BaseSeleniumTest {
 
 
     @Test
-    public void Test() {
+    public void searchSeleniumInSearchFieldAndGetResultCount() {
 
         MainPage mainPage = new MainPage(driver);
         mainPage.goToMainPageUrl();
         mainPage.clickAndSearchSeleniumInSearchField();
+    }
 
+    @Test
+    public void checkPricesOfProductsOnPricingPage() {
 
+        MainPage mainPage = new MainPage(driver);
+        mainPage.goToMainPageUrl();
+        PricingPage pricingPage = new PricingPage(driver);
+        pricingPage.getPricesFromProducts();
 
 
     }
-
-
 }
 
