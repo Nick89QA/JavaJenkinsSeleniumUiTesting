@@ -27,7 +27,7 @@ public class PricingPage extends BaseSeleniumPage {
     private String expectedSearchResultPageUrl = "https://www.browserstack.com/pricing?cycle=annual";
 
     @FindBy(xpath = "//*[@href='/pricing']")
-    WebElement pricingButton;
+    WebElement buttonPricing;
 
     @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='Live ']")
     WebElement menuButtonLive;
@@ -40,6 +40,10 @@ public class PricingPage extends BaseSeleniumPage {
 
     @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='App Automate ']")
     WebElement menuButtonAppAutomate;
+
+    public void getPricesFromProducts() {
+     buttonPricing.click();
+    }
 
 
 
