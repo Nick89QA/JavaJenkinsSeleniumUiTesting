@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -42,12 +43,9 @@ public class PricingPage extends BaseSeleniumPage {
     WebElement menuButtonAppAutomate;
 
     public void getPricesFromProducts() {
-     buttonPricing.click();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonPricing));
+        buttonPricing.click();
     }
-
-
-
-
 
 
 }
