@@ -43,9 +43,9 @@ public class PricingPage extends BaseSeleniumPage {
     WebElement sideButtonAppAutomate;
 
     public void getPricesFromProducts() {
-        wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing));
-        topButtonPricing.click();
-        wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing));
+        wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(sideButtonLive)).click();
+
 
     }
 
