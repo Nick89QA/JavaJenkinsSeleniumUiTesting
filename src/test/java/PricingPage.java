@@ -1,4 +1,5 @@
 import core.BaseSeleniumPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,9 +43,14 @@ public class PricingPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='App Automate ']")
     WebElement sideButtonAppAutomate;
 
+    @FindBy(xpath = "//span[@class='amount']")
+    WebElement getAmount;
+
+
     public void getPricesFromProducts() {
         wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
         wait.until(ExpectedConditions.elementToBeClickable(sideButtonLive)).click();
+        WebElement searchAmountFromPrice = getAmount.
 
 
     }
