@@ -47,10 +47,12 @@ public class PricingPage extends BaseSeleniumPage {
     WebElement getAmount;
 
 
-    public void getPricesFromProducts() {
+    public String getPricesFromProducts() {
         wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
         wait.until(ExpectedConditions.elementToBeClickable(sideButtonLive)).click();
-        WebElement searchAmountFromPrice = getAmount.
+        WebElement searchAmountFromPrice = driver.findElement(By.xpath("//span[@class='amount']"));
+        System.out.println(searchAmountFromPrice + "our price");
+        return searchAmountFromPrice.getAttribute()
 
 
     }
