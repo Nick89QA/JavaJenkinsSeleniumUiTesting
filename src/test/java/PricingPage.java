@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.time.Duration;
+import java.util.List;
 
 /**
  * Go to the pricing page and check prices on 5 different products
@@ -50,12 +51,16 @@ public class PricingPage extends BaseSeleniumPage {
     public String getPricesFromProducts() {
         wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
         wait.until(ExpectedConditions.elementToBeClickable(sideButtonLive)).click();
-        WebElement searchAmountFromPrice = driver.findElement(By.xpath("//span[@class='amount']"));
-        System.out.println(searchAmountFromPrice + "our price");
-        return searchAmountFromPrice.getAttribute()
+
+        List<WebElement> pricesElements = driver.findElements(By.xpath("//span[@class='amount']"));
+    // handle information with error
+        if (pricesElements.isEmpty()) {
+            System.out.println("We didn't find any elements with this xpath");
+        return "";
+        }
+
 
 
     }
-
 
 }
