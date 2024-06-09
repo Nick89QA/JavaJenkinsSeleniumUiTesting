@@ -53,13 +53,19 @@ public class PricingPage extends BaseSeleniumPage {
         wait.until(ExpectedConditions.elementToBeClickable(sideButtonLive)).click();
 
         List<WebElement> pricesElements = driver.findElements(By.xpath("//span[@class='amount']"));
-    // handle information with error
+        // handle information with error
         if (pricesElements.isEmpty()) {
             System.out.println("We didn't find any elements with this xpath");
-        return "";
+            return "";
         }
-
-
+        StringBuilder prices = new StringBuilder();
+        for (WebElement pricesElement : pricesElements) {
+            String amountValue = pricesElement.getAttribute("amount");
+            prices.append(amountValue).append(" ");
+        }
+        System.out.println("Цены товаров:");
+        System.out.println(prices.toString());
+        return prices.toString();
 
     }
 
