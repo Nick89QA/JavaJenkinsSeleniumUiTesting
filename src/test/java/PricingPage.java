@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Go to the pricing page and check prices on 5 different products
@@ -44,7 +45,7 @@ public class PricingPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='App Automate ']")
     WebElement sideButtonAppAutomate;
 
-    @FindBy(xpath = "//span[@class='amount']")
+    @FindBy(xpath = "//*[@class='amount']/text()")
     WebElement getAmount;
 
 
@@ -54,18 +55,16 @@ public class PricingPage extends BaseSeleniumPage {
 
         List<WebElement> pricesElements = driver.findElements(By.xpath("//span[@class='amount']"));
         // handle information with error
+        String prices = pricesElements.stream()
+                .map(WebElement::getText)
+                .collect(Collectors.joining());
         if (pricesElements.isEmpty()) {
             System.out.println("We didn't find any elements with this xpath");
-            return "";
+            return " ";
         }
-        StringBuilder prices = new StringBuilder();
-        for (WebElement pricesElement : pricesElements) {
-            String amountValue = pricesElement.getAttribute("amount");
-            prices.append(amountValue).append(" ");
-        }
-        System.out.println("Цены товаров:");
-        System.out.println(prices.toString());
-        return prices.toString();
+
+        System.out.println("Цены товаров:" + prices);
+        return prices;
 
     }
 
