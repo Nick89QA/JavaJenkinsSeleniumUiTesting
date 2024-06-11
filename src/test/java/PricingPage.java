@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Go to the pricing page and check prices on 5 different products
+ * Go to the pricing page and check prices on 5 different products and check all three products plan
  */
 
 public class PricingPage extends BaseSeleniumPage {
@@ -57,7 +57,7 @@ public class PricingPage extends BaseSeleniumPage {
         // handle information with error
         String prices = pricesElements.stream()
                 .map(WebElement::getText)
-                .collect(Collectors.joining());
+                .collect(Collectors.joining(", "));
         if (pricesElements.isEmpty()) {
             System.out.println("We didn't find any elements with this xpath");
             return " ";
