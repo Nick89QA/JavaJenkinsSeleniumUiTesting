@@ -1,4 +1,5 @@
 import core.BaseSeleniumPage;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,6 +49,11 @@ public class PricingPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@class='amount']/text()")
     WebElement getAmount;
 
+    @FindBy(xpath = "(//input[@role='button'])[1]")
+    WebElement desktopChooseButton;
+
+    @FindBy(xpath = "//div[contains(text(), '348.00')]")
+    WebElement totalDueElement;
 
     public String getPricesFromProducts() {
         wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
@@ -65,6 +71,14 @@ public class PricingPage extends BaseSeleniumPage {
 
         System.out.println("Цены товаров:" + prices);
         return prices;
+
+    }
+
+    public void checkDesktopProposition() {
+        wait.until(ExpectedConditions.elementToBeClickable(desktopChooseButton)).click();
+        WebElement element = driver.findElement(new By.ByXPath("//div[contains(text(), '348.00')]"));
+        Assert(element.isDisplayed(), "Element is not displayed");
+
 
     }
 
