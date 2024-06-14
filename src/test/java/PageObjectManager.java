@@ -24,7 +24,7 @@ public class PageObjectManager extends BaseSeleniumTest {
         MainPage mainPage = new MainPage(driver);
         mainPage.goToMainPageUrl();
         PricingPage pricingPage = new PricingPage(driver);
-        pricingPage.getPricesFromProducts();
+        pricingPage.checkDesktopProposition();
 
 
     }
