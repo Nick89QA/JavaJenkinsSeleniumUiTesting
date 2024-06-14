@@ -1,6 +1,7 @@
 import core.BaseSeleniumPage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+import javax.swing.*;
 import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,7 +51,7 @@ public class PricingPage extends BaseSeleniumPage {
     @FindBy(xpath = "//*[@class='amount']/text()")
     WebElement getAmount;
 
-    @FindBy(xpath = "(//input[@role='button'])[1]")
+    @FindBy(xpath = "(//div[@class='upgrade-btn']//input[@value='Choose'])[5]")
     WebElement desktopChooseButton;
 
     @FindBy(xpath = "//div[contains(text(), '348.00')]")
@@ -74,10 +76,15 @@ public class PricingPage extends BaseSeleniumPage {
 
     }
 
+
+
     public void checkDesktopProposition() {
-        wait.until(ExpectedConditions.elementToBeClickable(desktopChooseButton)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
+
+        desktopChooseButton.click();
         WebElement element = driver.findElement(new By.ByXPath("//div[contains(text(), '348.00')]"));
-        Assert(element.isDisplayed(), "Element is not displayed");
+        element.getText();
+        Assert.assertTrue("Element is not displayed", element.isDisplayed());
 
 
     }
