@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import javax.swing.*;
 import java.time.Duration;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -23,6 +24,7 @@ public class PricingPage extends BaseSeleniumPage {
 
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    private static final Logger logger = Logger.getLogger(PricingPage.class.getName());
 
     public PricingPage(WebDriver driver) {
         super(driver);
@@ -77,14 +79,28 @@ public class PricingPage extends BaseSeleniumPage {
     }
 
 
-
+// get text from Total Due on order page with bill details
     public void checkDesktopProposition() {
-        wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
 
+        logger.info("Waiting for the topButtonPricing to be clickable.");
+        wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
+        logger.info("Clicked on topButtonPricing.");
+
+        logger.info("Scrolling to desktopChooseButton.");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", desktopChooseButton);
+
+        logger.info("Clicking on desktopChooseButton.");
         desktopChooseButton.click();
+
+        logger.info("Finding the element containing text '348.00'.");
         WebElement element = driver.findElement(new By.ByXPath("//div[contains(text(), '348.00')]"));
-        element.getText();
+
+        String totalDuePrice = element.getText();
+        logger.info("Extracted text from the element: " + totalDuePrice);
+
+        System.out.println("Text from the element: " + totalDuePrice);
         Assert.assertTrue("Element is not displayed", element.isDisplayed());
+
 
 
     }
