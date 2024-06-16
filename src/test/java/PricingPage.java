@@ -1,4 +1,6 @@
 import core.BaseSeleniumPage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,10 +12,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-import javax.swing.*;
 import java.time.Duration;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -24,7 +24,9 @@ public class PricingPage extends BaseSeleniumPage {
 
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    private static final Logger logger = Logger.getLogger(PricingPage.class.getName());
+
+
+    private static final Logger logger = LogManager.getLogger(PricingPage.class);
 
     public PricingPage(WebDriver driver) {
         super(driver);
