@@ -9,7 +9,9 @@ import org.junit.Test;
 
 public class PageObjectManager extends BaseSeleniumTest {
 
-
+    /**
+     * this test function is search word "Selenium" and get count from result page
+     */
     @Test
     public void searchSeleniumInSearchFieldAndGetResultCount() {
 
@@ -18,6 +20,9 @@ public class PageObjectManager extends BaseSeleniumTest {
         mainPage.clickAndSearchSeleniumInSearchField();
     }
 
+    /**
+     * this test function is going to pricing page and  
+     */
     @Test
     public void checkPricesOfProductsOnPricingPage() {
 
