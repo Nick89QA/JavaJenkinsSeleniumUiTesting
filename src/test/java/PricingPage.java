@@ -83,6 +83,7 @@ public class PricingPage extends BaseSeleniumPage {
 
 // get text from Total Due on order page with bill details
     public void checkDesktopProposition() {
+        logger.info("Starting checkDesktopProposition method");
 
         logger.info("Waiting for the topButtonPricing to be clickable.");
         wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
