@@ -10,8 +10,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,9 +20,7 @@ import java.util.stream.Collectors;
 
 public class PricingPage extends BaseSeleniumPage {
 
-
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
 
     private static final Logger logger = LogManager.getLogger(PricingPage.class);
 
@@ -86,7 +82,6 @@ public class PricingPage extends BaseSeleniumPage {
         logger.info("Starting checkDesktopProposition method");
         try {
 
-
             logger.info("Waiting for the topButtonPricing to be clickable.");
             wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
             logger.info("Clicked on topButtonPricing.");
@@ -106,10 +101,8 @@ public class PricingPage extends BaseSeleniumPage {
             System.out.println("Text from the element: " + totalDuePrice);
             Assert.assertTrue("Element is not displayed", element.isDisplayed());
 
-
         } catch (Exception e) {
             logger.error("An error occurred in checkDesktopProposition method", e);
         }
-
     }
 }
