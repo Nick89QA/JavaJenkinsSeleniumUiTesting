@@ -10,9 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Go to the pricing page and check prices on 5 different products and check all three products plan
@@ -34,47 +33,16 @@ public class PricingPage extends BaseSeleniumPage {
     private String expectedSearchResultPageUrl = "https://www.browserstack.com/pricing?cycle=annual";
 
     @FindBy(xpath = "//*[@href='/pricing']")
-    WebElement topButtonPricing;
+    WebElement topPricingButton;
 
     @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='Live ']")
     WebElement sideButtonLive;
-
-    @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='App Live ']")
-    WebElement sideButtonAppLive;
-
-    @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='Automate ']")
-    WebElement sideButtonAutomate;
-
-    @FindBy(xpath = "//div[@class='sidenav__item__nav']//span[text()='App Automate ']")
-    WebElement sideButtonAppAutomate;
-
-    @FindBy(xpath = "//*[@class='amount']/text()")
-    WebElement getAmount;
 
     @FindBy(xpath = "(//div[@class='upgrade-btn']//input[@value='Choose'])[5]")
     WebElement desktopChooseButton;
 
     @FindBy(xpath = "//div[contains(text(), '348.00')]")
     WebElement totalDueElement;
-
-    public String getPricesFromProducts() {
-        wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(sideButtonLive)).click();
-
-        List<WebElement> pricesElements = driver.findElements(By.xpath("//span[@class='amount']"));
-        // handle information with error
-        String prices = pricesElements.stream()
-                .map(WebElement::getText)
-                .collect(Collectors.joining(", "));
-        if (pricesElements.isEmpty()) {
-            System.out.println("We didn't find any elements with this xpath");
-            return " ";
-        }
-
-        System.out.println("Цены товаров:" + prices);
-        return prices;
-
-    }
 
 
     // get text from Total Due on order page with bill details
@@ -83,7 +51,7 @@ public class PricingPage extends BaseSeleniumPage {
         try {
 
             logger.info("Waiting for the topButtonPricing to be clickable.");
-            wait.until(ExpectedConditions.elementToBeClickable(topButtonPricing)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(topPricingButton)).click();
             logger.info("Clicked on topButtonPricing.");
 
             logger.info("Scrolling to desktopChooseButton.");
@@ -105,4 +73,6 @@ public class PricingPage extends BaseSeleniumPage {
             logger.error("An error occurred in checkDesktopProposition method", e);
         }
     }
+
+
 }
