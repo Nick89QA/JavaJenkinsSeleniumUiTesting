@@ -1,0 +1,23 @@
+name: Auto Sync Master Branch
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Запускать ежедневно в полночь UTC (можно настроить время по своему усмотрению)
+
+jobs:
+  sync-master:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Fetch remote changes
+        run: git fetch origin master
+
+      - name: Reset local branch to match remote
+        run: git reset --hard origin/master
+
+      - name: Push changes to remote (optional)
+        if: success()  # Пуш изменений, только если операция успешна
+        run: git push origin master
