@@ -1,23 +1,28 @@
-name: Auto Sync Master Branch
+name: Sync Master Branch
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Запускать ежедневно в полночь UTC (можно настроить время по своему усмотрению)
+  push:
+    branches:
+      - master
 
 jobs:
-  sync-master:
+  sync:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Fetch remote changes
-        run: git fetch origin master
+      - name: Configure Git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Reset local branch to match remote
-        run: git reset --hard origin/master
+      - name: Pull latest changes
+        run: git pull origin master
 
-      - name: Push changes to remote (optional)
-        if: success()  # Пуш изменений, только если операция успешна
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: git push origin master
+
