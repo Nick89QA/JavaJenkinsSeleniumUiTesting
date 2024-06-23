@@ -1,40 +1,22 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:11
+# Используем базовый образ с Maven и JDK 11
+FROM maven:3.8.6-openjdk-11-slim AS build
 
-# Set the working directory
+# Устанавливаем Xvfb для виртуального дисплея
+RUN apt-get update && apt-get install -y \
+    xvfb \
+    && rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем Selenoid CLI
+RUN curl -Lo /usr/local/bin/cm https://github.com/aerokube/cm/releases/download/1.8.1/cm_linux_amd64 && \
+    chmod +x /usr/local/bin/cm
+
+# Настраиваем рабочую директорию
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Копируем проект в контейнер
+COPY . .
 
-# Install necessary tools
-RUN apt-get update && \
-    apt-get install -y maven && \
-    apt-get install -y curl unzip xvfb
+# Устанавливаем зависимости и запускаем тесты
+CMD ["sh", "-c", "Xvfb :99 -ac & cm selenoid start --vnc --port 5555 & mvn test"]
 
-# Download and install Google Chrome
-RUN curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o chrome.deb && \
-    apt-get install -y ./chrome.deb && \
-    rm chrome.deb
 
-# Download and install ChromeDriver
-RUN CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
-    curl -sS -L https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip -o chromedriver.zip && \
-    unzip chromedriver.zip -d /usr/local/bin/ && \
-    rm chromedriver.zip
-
-# Add Chromedriver to the PATH
-ENV PATH /usr/local/bin:$PATH
-
-# Add a non-root user to run tests
-RUN useradd -m selenium
-USER selenium
-
-# Install project dependencies and build the project
-RUN mvn clean install
-
-# Define environment variable to use XVFB
-ENV DISPLAY=:99
-
-# Run the tests
-CMD ["sh", "-c", "Xvfb :99 -ac & mvn test"]
