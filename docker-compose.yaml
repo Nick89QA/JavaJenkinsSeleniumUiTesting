@@ -1,17 +1,22 @@
-version: '3'
+version: "3"
 services:
   selenium-hub:
-    image: selenium/hub:3.141.59
-    container_name: selenium-hub
+    image: selenium/hub:4.0.0
+    platform: linux/amd64
     ports:
       - "4444:4444"
 
   chrome:
-    image: selenium/node-chrome:3.141.59
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-chrome:4.0.0
+    platform: linux/amd64
     depends_on:
       - selenium-hub
     environment:
-      HUB_HOST: selenium-hub
-      HUB_PORT: 4444
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    volumes:
+      - /dev/shm:/dev/shm
+
+
+
+

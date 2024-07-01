@@ -1,8 +1,7 @@
-package core;
-
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -17,18 +16,21 @@ public class BaseSeleniumTest {
 
     @Before
     public void setUp() throws MalformedURLException {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-gpu");
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-
-
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @After
     public void tearDown() {
-        driver.close();
-        driver.quit();
+        if(driver != null) {
+            driver.quit();
+        }
     }
 }
