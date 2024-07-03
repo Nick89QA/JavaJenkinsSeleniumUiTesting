@@ -1,12 +1,16 @@
+package runTest;
 
+import core.BaseSeleniumTest;
 import org.junit.Test;
+import pages.MainPage;
+import pages.PricingPage;
 
 
 /**
  * on this page will be run all the tests
  */
 
-public class PageObjectManager extends BaseSeleniumTest {
+public class PageObjectTest extends BaseSeleniumTest {
 
     /**
      * this test function is search word "Selenium" and get count from result page
