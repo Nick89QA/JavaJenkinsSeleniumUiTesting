@@ -15,6 +15,18 @@ import java.time.Duration;
 public class BaseSeleniumTest {
     protected WebDriver driver;
 
+   @Before
+   public void setUp() throws MalformedURLException {
+       ChromeOptions options = new ChromeOptions();
+       options.addArguments("--headless");
+       options.addArguments("--disable-dev-shm-usage");
+       options.addArguments("--no-sandbox");
+       options.addArguments("--disable-gpu");
+
+       DesiredCapabilities capabilities = new DesiredCapabilities();
+       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+       driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+   }
 
 
 

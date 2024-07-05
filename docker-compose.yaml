@@ -1,28 +1,33 @@
-version: '4'
+version: "3"
 services:
   selenium-hub:
-    image: seleniarm/hub:latest
+    image: seleniarm/hub:4.1.2-20220118
     container_name: selenium-hub
     ports:
       - "4444:4444"
 
   chrome:
-    image: seleniarm/node-chromium:latest
-    container_name: chrome
-    environment:
-      - HUB_HOST=selenium-hub-new
-      - HUB_PORT=4444
+    image: seleniarm/node-chromium:4.1.2-20220118
     depends_on:
       - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    volumes:
+      - /dev/shm:/dev/shm
 
   firefox:
-    image: seleniarm/node-firefox:latest
-    container_name: firefox
-    environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
+    image: seleniarm/node-firefox:4.1.2-20220118
     depends_on:
       - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    volumes:
+      - /dev/shm:/dev/shm
+
 
 
 
