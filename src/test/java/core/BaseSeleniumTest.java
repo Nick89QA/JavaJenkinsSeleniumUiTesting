@@ -3,12 +3,8 @@ package core;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 
 
@@ -16,16 +12,16 @@ public class BaseSeleniumTest {
     protected WebDriver driver;
 
    @Before
-   public void setUp() throws MalformedURLException {
+   public void setUp() {
        ChromeOptions options = new ChromeOptions();
        options.addArguments("--headless");
        options.addArguments("--disable-dev-shm-usage");
        options.addArguments("--no-sandbox");
        options.addArguments("--disable-gpu");
 
-       DesiredCapabilities capabilities = new DesiredCapabilities();
-       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-       driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+   driver = new ChromeDriver(options);
+   driver.manage().window().maximize();
+   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
    }
 
 
