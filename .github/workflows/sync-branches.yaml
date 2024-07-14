@@ -1,11 +1,11 @@
-name: Sync Local Master with Remote
+name: Sync Local Branch with Remote Master
 
 on:
   pull_request:
     types: [closed]
 
 jobs:
-  sync_local_master:
+  sync_local_branch:
     runs-on: ubuntu-latest
 
     if: github.event.pull_request.merged == true
@@ -16,17 +16,23 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name "YourName"
-          git config --global user.email "your-email@example.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Pull latest changes from remote master
         run: |
           git checkout master
           git pull origin master
 
-      - name: Push changes to local master
+      - name: Merge changes into your branch
         run: |
-          git push origin master
+          git checkout your-branch
+          git merge master
+
+      - name: Push changes to your branch
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
+          git push origin your-branch
+
 
