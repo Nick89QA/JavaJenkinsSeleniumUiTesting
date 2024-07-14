@@ -12,16 +12,16 @@ JavaJenkinsSeleniumUiTesting is a project for automated user interface testing u
 
 ## Prerequisites
 
-- Java 8 or higher
+- Java 8
 - Maven
 - Docker
 - Docker Compose
-
+- Github actions
 ## Installation and Running
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/JavaJenkinsSeleniumUiTesting.git
+    git https://github.com/Nick89QA/JavaJenkinsSeleniumUiTesting.git
     cd JavaJenkinsSeleniumUiTesting
     ```
 
@@ -48,35 +48,3 @@ The `docker-compose.yaml` file is used to configure and start the Selenium Grid 
 - **chrome**: A node with the Chrome browser.
 - **firefox**: A node with the Firefox browser.
 
-```yaml
-version: "3"
-services:
-  selenium-hub:
-    image: selenium/hub:4.0.0
-    platform: linux/amd64
-    ports:
-      - "4444:4444"
-
-  chrome:
-    image: selenium/node-chrome:4.0.0
-    platform: linux/amd64
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_OPTS=-enable-logging
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
-      - START_XVFB=false
-    volumes:
-      - /dev/shm:/dev/shm
-
-  firefox:
-    image: selenium/node-firefox:4.0.0
-    platform: linux/amd64
-    depends_on:
-      - selenium-hub
-    environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
-    volumes:
-      - /dev/shm:/dev/shm
