@@ -5,30 +5,22 @@ on:
     types: [closed]
 
 jobs:
-  sync_local_branch:
+  sync-master:
     runs-on: ubuntu-latest
 
-    if: github.event.pull_request.merged == true
-
     steps:
-      - name: Checkout repository
+      - name: Checkout the repository
         uses: actions/checkout@v3
 
-      - name: Set up Git
+      - name: Fetch updates from remote
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin
 
-      - name: Pull latest changes from remote master
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+      - name: Merge remote master into local master
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
-          git pull origin master
+          git merge origin/master
 
-      - name: Push changes to remote master
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+      - name: Push changes to remote
         run: |
           git push origin master
 
