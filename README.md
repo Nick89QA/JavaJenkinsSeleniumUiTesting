@@ -2,7 +2,8 @@
 
 ## Description
 
-JavaJenkinsSeleniumUiTesting is a project for automated user interface testing using Selenium and Java. The project is designed to run and execute tests in Docker containers, providing convenience and cross-platform compatibility.
+JavaSelenium is a project for automated user interface testing using Selenium and Java. The project is designed to run and execute tests in Docker containers, 
+providing convenience and cross-platform compatibility.
 
 ## Project Structure
 
@@ -14,8 +15,8 @@ JavaJenkinsSeleniumUiTesting is a project for automated user interface testing u
 
 - Java 8
 - Maven
+- Junit
 - Docker
-- Docker Compose
 - Github actions
 ## Installation and Running
 
@@ -30,21 +31,9 @@ JavaJenkinsSeleniumUiTesting is a project for automated user interface testing u
     mvn clean install
     ```
 
-3. Start Docker Compose to set up Selenium Grid:
-    ```sh
-    docker-compose up -d
+3. Run the tests:
     ```
-
-4. Run the tests:
-    ```sh
     mvn test
     ```
 
-## Docker Compose Configuration
-
-The `docker-compose.yaml` file is used to configure and start the Selenium Grid containers. It defines the following services:
-
-- **selenium-hub**: The central hub of Selenium Grid.
-- **chrome**: A node with the Chrome browser.
-- **firefox**: A node with the Firefox browser.
 
