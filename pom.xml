@@ -41,6 +41,8 @@
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
+                    <reportsDirectory>target/surefire-reports</reportsDirectory>
+                    <reportFormat>both</reportFormat> <!-- Генерация отчетов в XML и HTML формате -->
                 </configuration>
             </plugin>
         </plugins>
