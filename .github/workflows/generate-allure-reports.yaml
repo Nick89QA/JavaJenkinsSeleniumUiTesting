@@ -23,25 +23,14 @@ jobs:
         run: mvn test
 
       - name: Generate Allure Report
-        run: mvn allure:report
+        run: mvn io.qameta.allure:allure-maven:2.10.0:report
 
-      - name: Upload Allure results
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-results
-          path: target/allure-results/
-
-      - name: Upload Allure report
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-report
-          path: target/site/allure-maven-plugin/
+      - name: List Allure report directory
+        run: ls -al target/site/allure-maven-plugin/
 
       - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/site/allure-maven-plugin
