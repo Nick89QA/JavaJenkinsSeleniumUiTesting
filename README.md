@@ -47,7 +47,7 @@ JavaSelenium is a project for automated user interface testing using Selenium an
 
     ```
 
-3. Create a GitHub Actions workflow file in `.github/workflows/ci.yml`:
+1. Create a GitHub Actions workflow file in `.github/workflows/ci.yml`:
     ```yaml
     name: CI
 
@@ -73,7 +73,7 @@ JavaSelenium is a project for automated user interface testing using Selenium an
 
    Replace `<your-label>` with the label you assigned to your self-hosted runner.
 
-4. Push the changes to your GitHub repository to trigger the CI workflow.
+2. Push the changes to your GitHub repository to trigger the CI workflow.
 
 ## Logging
 
