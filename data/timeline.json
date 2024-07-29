@@ -1,0 +1,37 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az773-710",
+    "children" : [ {
+      "name" : "2148@fv-az773-710.main(1)",
+      "children" : [ {
+        "name" : "checkPricesOfProductsOnPricingPage",
+        "uid" : "5c88bb48642165b6",
+        "parentUid" : "241ac6f02cf3e6afc3e9ba00e13bc6ee",
+        "status" : "passed",
+        "time" : {
+          "start" : 1722246478149,
+          "stop" : 1722246485109,
+          "duration" : 6960
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "searchSeleniumInSearchFieldAndGetResultCount",
+        "uid" : "dca519b0e5e0477e",
+        "parentUid" : "241ac6f02cf3e6afc3e9ba00e13bc6ee",
+        "status" : "passed",
+        "time" : {
+          "start" : 1722246485150,
+          "stop" : 1722246491214,
+          "duration" : 6064
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "241ac6f02cf3e6afc3e9ba00e13bc6ee"
+    } ],
+    "uid" : "ced135b81a3013f228d2a5be63942803"
+  } ],
+  "name" : "timeline"
+}

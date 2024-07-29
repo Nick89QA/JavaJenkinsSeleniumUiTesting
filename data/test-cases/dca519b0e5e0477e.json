@@ -1,0 +1,63 @@
+{
+  "uid" : "dca519b0e5e0477e",
+  "name" : "searchSeleniumInSearchFieldAndGetResultCount",
+  "fullName" : "runTest.PageObjectTest.searchSeleniumInSearchFieldAndGetResultCount",
+  "historyId" : "6f2631ccb85d29b527d34d269f3d9501",
+  "time" : {
+    "start" : 1722246485150,
+    "stop" : 1722246491214,
+    "duration" : 6064
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "runTest"
+  }, {
+    "name" : "testClass",
+    "value" : "runTest.PageObjectTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "searchSeleniumInSearchFieldAndGetResultCount"
+  }, {
+    "name" : "suite",
+    "value" : "runTest.PageObjectTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az773-710"
+  }, {
+    "name" : "thread",
+    "value" : "2148@fv-az773-710.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "c39e1825f1b5b769",
+      "status" : "passed",
+      "time" : {
+        "start" : 1722246445276,
+        "stop" : 1722246475170,
+        "duration" : 29894
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "dca519b0e5e0477e.json",
+  "parameterValues" : [ ]
+}

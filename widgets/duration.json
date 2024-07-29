@@ -1,0 +1,21 @@
+[ {
+  "uid" : "5c88bb48642165b6",
+  "name" : "checkPricesOfProductsOnPricingPage",
+  "time" : {
+    "start" : 1722246478149,
+    "stop" : 1722246485109,
+    "duration" : 6960
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dca519b0e5e0477e",
+  "name" : "searchSeleniumInSearchFieldAndGetResultCount",
+  "time" : {
+    "start" : 1722246485150,
+    "stop" : 1722246491214,
+    "duration" : 6064
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

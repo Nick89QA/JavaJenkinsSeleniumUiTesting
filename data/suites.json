@@ -1,0 +1,33 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "runTest.PageObjectTest",
+    "children" : [ {
+      "name" : "checkPricesOfProductsOnPricingPage",
+      "uid" : "5c88bb48642165b6",
+      "parentUid" : "e8f402af055bf3d6952b3e3208e79900",
+      "status" : "passed",
+      "time" : {
+        "start" : 1722246478149,
+        "stop" : 1722246485109,
+        "duration" : 6960
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "searchSeleniumInSearchFieldAndGetResultCount",
+      "uid" : "dca519b0e5e0477e",
+      "parentUid" : "e8f402af055bf3d6952b3e3208e79900",
+      "status" : "passed",
+      "time" : {
+        "start" : 1722246485150,
+        "stop" : 1722246491214,
+        "duration" : 6064
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "e8f402af055bf3d6952b3e3208e79900"
+  } ],
+  "name" : "suites"
+}
