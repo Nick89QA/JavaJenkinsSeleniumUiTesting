@@ -1,12 +1,12 @@
 {
-  "uid" : "5c88bb48642165b6",
-  "name" : "checkPricesOfProductsOnPricingPage",
-  "fullName" : "runTest.PageObjectTest.checkPricesOfProductsOnPricingPage",
-  "historyId" : "183022bd0d501aad566c262371b25bd3",
+  "uid" : "c2071c3a006d8dc5",
+  "name" : "searchSeleniumInSearchFieldAndGetResultCount",
+  "fullName" : "runTest.PageObjectTest.searchSeleniumInSearchFieldAndGetResultCount",
+  "historyId" : "6f2631ccb85d29b527d34d269f3d9501",
   "time" : {
-    "start" : 1722246478149,
-    "stop" : 1722246485109,
-    "duration" : 6960
+    "start" : 1722285327277,
+    "stop" : 1722285333294,
+    "duration" : 6017
   },
   "status" : "passed",
   "flaky" : false,
@@ -20,16 +20,16 @@
     "value" : "runTest.PageObjectTest"
   }, {
     "name" : "testMethod",
-    "value" : "checkPricesOfProductsOnPricingPage"
+    "value" : "searchSeleniumInSearchFieldAndGetResultCount"
   }, {
     "name" : "suite",
     "value" : "runTest.PageObjectTest"
   }, {
     "name" : "host",
-    "value" : "fv-az773-710"
+    "value" : "fv-az1055-565"
   }, {
     "name" : "thread",
-    "value" : "2148@fv-az773-710.main(1)"
+    "value" : "2141@fv-az1055-565.main(1)"
   }, {
     "name" : "framework",
     "value" : "junit4"
@@ -47,17 +47,17 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "66e7c2731bec3632",
+      "uid" : "b768a10e700dd5ea",
       "status" : "passed",
       "time" : {
-        "start" : 1722246437967,
-        "stop" : 1722246445230,
-        "duration" : 7263
+        "start" : 1722285311207,
+        "stop" : 1722285317043,
+        "duration" : 5836
       }
     } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "5c88bb48642165b6.json",
+  "source" : "c2071c3a006d8dc5.json",
   "parameterValues" : [ ]
 }

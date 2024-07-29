@@ -1,12 +1,12 @@
 {
-  "uid" : "c39e1825f1b5b769",
+  "uid" : "b768a10e700dd5ea",
   "name" : "searchSeleniumInSearchFieldAndGetResultCount",
   "fullName" : "runTest.PageObjectTest.searchSeleniumInSearchFieldAndGetResultCount",
   "historyId" : "6f2631ccb85d29b527d34d269f3d9501",
   "time" : {
-    "start" : 1722246445276,
-    "stop" : 1722246475170,
-    "duration" : 29894
+    "start" : 1722285311207,
+    "stop" : 1722285317043,
+    "duration" : 5836
   },
   "status" : "passed",
   "flaky" : false,
@@ -26,10 +26,10 @@
     "value" : "runTest.PageObjectTest"
   }, {
     "name" : "host",
-    "value" : "fv-az773-710"
+    "value" : "fv-az1055-565"
   }, {
     "name" : "thread",
-    "value" : "1824@fv-az773-710.main(1)"
+    "value" : "1838@fv-az1055-565.main(1)"
   }, {
     "name" : "framework",
     "value" : "junit4"
@@ -48,6 +48,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "c39e1825f1b5b769.json",
+  "source" : "b768a10e700dd5ea.json",
   "parameterValues" : [ ]
 }
