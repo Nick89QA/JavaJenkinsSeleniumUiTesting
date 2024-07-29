@@ -21,3 +21,4 @@ target/
 #Allure
 .allure
 /*/allure-results/
+/allure-report/
