@@ -33,44 +33,18 @@ JavaSelenium is a project for automated user interface testing using Selenium an
 
 3. Run the tests:
     ```sh
-    mvn test
+    mvn clean test
+    ```
+4. Generate Allure report:
+    ```sh
+    mvn allure:report
     ```
 
 ## Running with Docker and GitHub Actions
 
 1. Ensure your self-hosted runner is set up on GitHub. Follow the instructions [here](https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners) to add a self-hosted runner to your repository.
 
-2. Create a Dockerfile in the root of your project:
-    ```Dockerfile
-    # Use the official Maven image to create a build artifact
-    FROM maven:3.8.5-openjdk-11-slim AS build
 
-    # Set the working directory
-    WORKDIR /app
-
-    # Copy the Maven configuration file
-    COPY pom.xml .
-
-    # Download the project dependencies
-    RUN mvn dependency:go-offline -B
-
-    # Copy the project source code
-    COPY src ./src
-
-    # Build the project and run tests
-    RUN mvn clean install
-
-    # Second stage: minimal image with JRE to run the application
-    FROM openjdk:11-jre-slim
-
-    # Set the working directory
-    WORKDIR /app
-
-    # Copy the built artifacts from the first stage
-    COPY --from=build /app/target /app/target
-
-    # Command to run the tests
-    CMD ["java", "-jar", "target/your-app.jar"]
     ```
 
 3. Create a GitHub Actions workflow file in `.github/workflows/ci.yml`:
