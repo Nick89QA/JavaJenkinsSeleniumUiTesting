@@ -1,3 +1,3 @@
 "Status","Name","Duration in ms","Description"
-"passed","runTest.PageObjectTest.searchSeleniumInSearchFieldAndGetResultCount","6017",""
-"passed","runTest.PageObjectTest.checkPricesOfProductsOnPricingPage","7055",""
+"passed","runTest.PageObjectTest.searchSeleniumInSearchFieldAndGetResultCount","5747",""
+"passed","runTest.PageObjectTest.checkPricesOfProductsOnPricingPage","6870",""
