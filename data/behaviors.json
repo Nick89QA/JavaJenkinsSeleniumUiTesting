@@ -2,25 +2,25 @@
   "uid" : "b1a8273437954620fa374b796ffaacdd",
   "children" : [ {
     "name" : "checkPricesOfProductsOnPricingPage",
-    "uid" : "b5ab34511227b23a",
+    "uid" : "d549afb4f96c964d",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1722368446707,
-      "stop" : 1722368453577,
-      "duration" : 6870
+      "start" : 1722455795024,
+      "stop" : 1722455802025,
+      "duration" : 7001
     },
     "flaky" : false,
     "parameters" : [ ]
   }, {
     "name" : "searchSeleniumInSearchFieldAndGetResultCount",
-    "uid" : "f5731a5fff1fc8e2",
+    "uid" : "b4bbc493da293ad7",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1722368453615,
-      "stop" : 1722368459362,
-      "duration" : 5747
+      "start" : 1722455802069,
+      "stop" : 1722455807886,
+      "duration" : 5817
     },
     "flaky" : false,
     "parameters" : [ ]
