@@ -15,7 +15,6 @@ JavaSelenium is a project for automated user interface testing using Selenium an
 - Java 8
 - Maven
 - JUnit
-- Docker
 - GitHub Actions
 
 ## Installation and Running
@@ -38,13 +37,6 @@ JavaSelenium is a project for automated user interface testing using Selenium an
 4. Generate Allure report:
     ```sh
     mvn allure:report
-    ```
-
-## Running with Docker and GitHub Actions
-
-1. Ensure your self-hosted runner is set up on GitHub. Follow the instructions [here](https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners) to add a self-hosted runner to your repository.
-
-
     ```
 
 1. Create a GitHub Actions workflow file in `.github/workflows/ci.yml`:
