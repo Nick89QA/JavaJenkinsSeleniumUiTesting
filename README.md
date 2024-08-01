@@ -39,34 +39,6 @@ JavaSelenium is a project for automated user interface testing using Selenium an
     mvn allure:report
     ```
 
-1. Create a GitHub Actions workflow file in `.github/workflows/ci.yml`:
-    ```yaml
-    name: CI
-
-    on: [push, pull_request]
-
-    jobs:
-      build:
-        runs-on: [self-hosted, <your-label>]
-
-        steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-
-        - name: Set up Docker Buildx
-          uses: docker/setup-buildx-action@v1
-
-        - name: Build Docker image
-          run: docker build -t my-java-app .
-
-        - name: Run tests
-          run: docker run my-java-app
-    ```
-
-   Replace `<your-label>` with the label you assigned to your self-hosted runner.
-
-2. Push the changes to your GitHub repository to trigger the CI workflow.
-
 ## Logging
 
 This project uses Log4j for logging. Configuration files can be found in the `src/test/resources` directory.
