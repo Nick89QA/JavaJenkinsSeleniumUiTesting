@@ -1,12 +1,12 @@
 {
-  "uid" : "922976bff7f1831d",
-  "name" : "searchSeleniumInSearchFieldAndGetResultCount",
-  "fullName" : "runTest.PageObjectTest.searchSeleniumInSearchFieldAndGetResultCount",
-  "historyId" : "6f2631ccb85d29b527d34d269f3d9501",
+  "uid" : "357f09e5b9c48190",
+  "name" : "checkPricesOfProductsOnPricingPage",
+  "fullName" : "runTest.PageObjectTest.checkPricesOfProductsOnPricingPage",
+  "historyId" : "183022bd0d501aad566c262371b25bd3",
   "time" : {
-    "start" : 1722455786212,
-    "stop" : 1722455792038,
-    "duration" : 5826
+    "start" : 1722592110544,
+    "stop" : 1722592119078,
+    "duration" : 8534
   },
   "status" : "passed",
   "flaky" : false,
@@ -20,16 +20,16 @@
     "value" : "runTest.PageObjectTest"
   }, {
     "name" : "testMethod",
-    "value" : "searchSeleniumInSearchFieldAndGetResultCount"
+    "value" : "checkPricesOfProductsOnPricingPage"
   }, {
     "name" : "suite",
     "value" : "runTest.PageObjectTest"
   }, {
     "name" : "host",
-    "value" : "fv-az569-339"
+    "value" : "fv-az738-33"
   }, {
     "name" : "thread",
-    "value" : "1842@fv-az569-339.main(1)"
+    "value" : "1834@fv-az738-33.main(1)"
   }, {
     "name" : "framework",
     "value" : "junit4"
@@ -48,6 +48,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "922976bff7f1831d.json",
+  "source" : "357f09e5b9c48190.json",
   "parameterValues" : [ ]
 }

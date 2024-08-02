@@ -1,37 +1,37 @@
 {
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "children" : [ {
-    "name" : "fv-az569-339",
+    "name" : "fv-az738-33",
     "children" : [ {
-      "name" : "2144@fv-az569-339.main(1)",
+      "name" : "2136@fv-az738-33.main(1)",
       "children" : [ {
         "name" : "checkPricesOfProductsOnPricingPage",
-        "uid" : "d549afb4f96c964d",
-        "parentUid" : "d5854346d25882fde1ffe4d2d23276ec",
+        "uid" : "31cd9f346e6a0200",
+        "parentUid" : "95152f34aafbe99021c7b4cda687bd8e",
         "status" : "passed",
         "time" : {
-          "start" : 1722455795024,
-          "stop" : 1722455802025,
-          "duration" : 7001
+          "start" : 1722592127963,
+          "stop" : 1722592134830,
+          "duration" : 6867
         },
         "flaky" : false,
         "parameters" : [ ]
       }, {
         "name" : "searchSeleniumInSearchFieldAndGetResultCount",
-        "uid" : "b4bbc493da293ad7",
-        "parentUid" : "d5854346d25882fde1ffe4d2d23276ec",
+        "uid" : "59c2d70eaf1fb293",
+        "parentUid" : "95152f34aafbe99021c7b4cda687bd8e",
         "status" : "passed",
         "time" : {
-          "start" : 1722455802069,
-          "stop" : 1722455807886,
-          "duration" : 5817
+          "start" : 1722592134873,
+          "stop" : 1722592140589,
+          "duration" : 5716
         },
         "flaky" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "d5854346d25882fde1ffe4d2d23276ec"
+      "uid" : "95152f34aafbe99021c7b4cda687bd8e"
     } ],
-    "uid" : "035b509bf46180e27f996674507cec6b"
+    "uid" : "6e541d04c57fad99967a689f38ab0cba"
   } ],
   "name" : "timeline"
 }
