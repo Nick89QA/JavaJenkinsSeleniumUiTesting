@@ -1,0 +1,53 @@
+{
+  "uid" : "eb59a4f899c7ba12",
+  "name" : "checkPricesOfProductsOnPricingPage",
+  "fullName" : "runTest.PageObjectTest.checkPricesOfProductsOnPricingPage",
+  "historyId" : "183022bd0d501aad566c262371b25bd3",
+  "time" : {
+    "start" : 1722628486523,
+    "stop" : 1722628494977,
+    "duration" : 8454
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "runTest"
+  }, {
+    "name" : "testClass",
+    "value" : "runTest.PageObjectTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkPricesOfProductsOnPricingPage"
+  }, {
+    "name" : "suite",
+    "value" : "runTest.PageObjectTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az914-226"
+  }, {
+    "name" : "thread",
+    "value" : "1833@fv-az914-226.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "eb59a4f899c7ba12.json",
+  "parameterValues" : [ ]
+}
