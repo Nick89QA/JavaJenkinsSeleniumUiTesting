@@ -1,0 +1,42 @@
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build Docker image
+        run: docker build -t my-test-image .
+
+      - name: Run tests in Docker container
+        run: |
+          docker run --name test-container my-test-image mvn test
+          docker cp test-container:/app/target/allure-results ./target/allure-results
+          docker rm test-container
+
+      - name: Generate Allure Report
+        run: mvn io.qameta.allure:allure-maven:2.10.0:report
+
+      - name: List Allure report directory
+        run: ls -al target/site/allure-maven-plugin/
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+          publish_dir: ./target/site/allure-maven-plugin
