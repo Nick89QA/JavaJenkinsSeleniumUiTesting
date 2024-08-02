@@ -1,3 +1,0 @@
-"Status","Name","Duration in ms","Description"
-"passed","runTest.PageObjectTest.checkPricesOfProductsOnPricingPage","6867",""
-"passed","runTest.PageObjectTest.searchSeleniumInSearchFieldAndGetResultCount","5716",""
