@@ -3,21 +3,35 @@ on: [pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      - name: Set up JDK 8
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '8'
 
-      - name: Cache Docker layers
+      - name: Cache Maven dependencies
         uses: actions/cache@v2
         with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-buildx-
+            ${{ runner.os }}-maven-
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Run tests
+        run: mvn test
+
+      - name: Generate Allure Report
+        run: mvn io.qameta.allure:allure-maven:2.10.0:report
+
+      - name: List Allure report directory
+        run: ls -al target/site/allure-maven-plugin/
 
       - name: Build Docker image
         run: docker build -t my-test-image .
@@ -28,11 +42,8 @@ jobs:
           docker cp test-container:/app/target/allure-results ./target/allure-results
           docker rm test-container
 
-      - name: Generate Allure Report
-        run: mvn io.qameta.allure:allure-maven:2.10.0:report
-
-      - name: List Allure report directory
-        run: ls -al target/site/allure-maven-plugin/
+      - name: Generate Allure Report from Docker
+        run: mvn io.qameta.allure:allure-maven:2.10.0:report -f ./target/allure-results
 
       - name: Deploy to GitHub Pages
         if: always()
