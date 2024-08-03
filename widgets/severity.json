@@ -1,20 +1,20 @@
 [ {
-  "uid" : "e5011032228c7c28",
+  "uid" : "8436decc70efbaeb",
   "name" : "searchSeleniumInSearchFieldAndGetResultCount",
   "time" : {
-    "start" : 1722628511227,
-    "stop" : 1722628517105,
-    "duration" : 5878
+    "start" : 1722717270703,
+    "stop" : 1722717276534,
+    "duration" : 5831
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "55f5b5903af6d178",
+  "uid" : "2178f7c320650032",
   "name" : "checkPricesOfProductsOnPricingPage",
   "time" : {
-    "start" : 1722628504090,
-    "stop" : 1722628511186,
-    "duration" : 7096
+    "start" : 1722717263725,
+    "stop" : 1722717270661,
+    "duration" : 6936
   },
   "status" : "passed",
   "severity" : "normal"
