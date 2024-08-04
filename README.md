@@ -2,10 +2,12 @@
 
 ## Description
 
-JavaSelenium is a project for automated user interface testing using Selenium and Java. This project follows the Page Factory design pattern and is configured to run on a GitHub server using Docker on a self-hosted runner machine.
+Java and Selenium is a project for automated user interface testing using Selenium and Java. 
+This project follows the Page Factory design pattern and is configured to run on GitHub Actions runner machines, deploying Allure reports on GitHub.
 
 ## Project Structure
 
+- **.github/workflows**: Contains build project with maven, run tests, and deploy allure report on github server. 
 - **src/test/java/core**: Contains base classes for configuring and executing Selenium WebDriver.
 - **pom.xml**: Maven configuration file for managing dependencies and building the project.
 - **src/test/resources**: Contains Log4j configuration for logging.
