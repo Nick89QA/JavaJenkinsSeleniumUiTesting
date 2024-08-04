@@ -1,12 +1,12 @@
 {
-  "uid" : "eacec8e067bc49ae",
+  "uid" : "798a40ddeab0aaeb",
   "name" : "searchSeleniumInSearchFieldAndGetResultCount",
   "fullName" : "runTest.PageObjectTest.searchSeleniumInSearchFieldAndGetResultCount",
   "historyId" : "6f2631ccb85d29b527d34d269f3d9501",
   "time" : {
-    "start" : 1722717261573,
-    "stop" : 1722717267374,
-    "duration" : 5801
+    "start" : 1722802436942,
+    "stop" : 1722802442662,
+    "duration" : 5720
   },
   "status" : "passed",
   "flaky" : false,
@@ -26,10 +26,10 @@
     "value" : "runTest.PageObjectTest"
   }, {
     "name" : "host",
-    "value" : "fv-az975-860"
+    "value" : "fv-az770-995"
   }, {
     "name" : "thread",
-    "value" : "2166@fv-az975-860.main(1)"
+    "value" : "2104@fv-az770-995.main(1)"
   }, {
     "name" : "framework",
     "value" : "junit4"
@@ -47,17 +47,17 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "4841255a5e34d865",
+      "uid" : "b608b451ad058788",
       "status" : "passed",
       "time" : {
-        "start" : 1722717245673,
-        "stop" : 1722717251465,
-        "duration" : 5792
+        "start" : 1722802421198,
+        "stop" : 1722802426998,
+        "duration" : 5800
       }
     } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "eacec8e067bc49ae.json",
+  "source" : "798a40ddeab0aaeb.json",
   "parameterValues" : [ ]
 }
