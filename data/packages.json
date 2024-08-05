@@ -4,25 +4,25 @@
     "name" : "runTest",
     "children" : [ {
       "name" : "checkPricesOfProductsOnPricingPage",
-      "uid" : "a91bb74df9e2a803",
+      "uid" : "6bdfe8d3e1f48469",
       "parentUid" : "98c9297ce90b98fc269f662f7242321e",
       "status" : "passed",
       "time" : {
-        "start" : 1722802429927,
-        "stop" : 1722802436902,
-        "duration" : 6975
+        "start" : 1722889201006,
+        "stop" : 1722889207929,
+        "duration" : 6923
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : "searchSeleniumInSearchFieldAndGetResultCount",
-      "uid" : "798a40ddeab0aaeb",
+      "uid" : "5bef2641eea45eae",
       "parentUid" : "98c9297ce90b98fc269f662f7242321e",
       "status" : "passed",
       "time" : {
-        "start" : 1722802436942,
-        "stop" : 1722802442662,
-        "duration" : 5720
+        "start" : 1722889207970,
+        "stop" : 1722889213781,
+        "duration" : 5811
       },
       "flaky" : false,
       "parameters" : [ ]
